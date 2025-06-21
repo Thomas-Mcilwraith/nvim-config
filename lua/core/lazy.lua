@@ -28,3 +28,18 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+-- lazygit keybind stuff that must be done after lazy plugins are installed
+local terminal  = require('toggleterm.terminal').Terminal
+local lazygit = terminal:new({
+    cmd = "lazygit", hidden = true,
+    dir = pwd,
+    direction = "float",
+    float_opts = {
+        border = "double",
+    },
+})
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end

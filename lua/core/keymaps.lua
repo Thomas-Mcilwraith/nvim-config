@@ -14,8 +14,15 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 -- ===== FILE EXPLORER =========================================================
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = 'File [E]xplorer' })
 
+-- ===== GIT INTEGRATION =======================================================
+vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _lazygit_toggle()<CR>", { desc = '[L]azygit', noremap = true, silent = true})
+vim.keymap.set('n', '<leader>gr', function ()
+    require('gitsigns').reset_hunk()
+end, { desc = '[R]eset Hunk'})
+vim.keymap.set("n", "<leader>gb", ":e!<CR>", { desc = "Refresh [G]it [B]uffer" })
+
 -- ===== TERMINAL ==============================================================
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<leader>tn', ':terminal<CR>i', { desc = '[T]erminal: [N]ew' })
 vim.keymap.set('n', '<leader>ts', ':10split | terminal<CR>i', { desc = '[T]erminal: [S]mall' })
 

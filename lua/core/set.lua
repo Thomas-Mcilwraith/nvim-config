@@ -43,6 +43,11 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 -- system
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  command = "checktime",
+  pattern = "*",
+})
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.confirm = true
