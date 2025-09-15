@@ -4,7 +4,7 @@ vim.o.relativenumber = true
 vim.o.signcolumn = 'yes'
 vim.o.cursorline = true
 vim.o.scrolloff = 15
-vim.o.colorcolumn = "80"
+vim.o.colorcolumn = "100"
 
 -- clipboard
 vim.schedule(function()
@@ -52,5 +52,5 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.confirm = true
 
--- mouse
-vim.mouse = 'a'
+-- -- mouse
+-- vim.mouse = 'a'
