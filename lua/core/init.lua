@@ -2,6 +2,7 @@ require("utils")
 require("core.keymaps")
 require("core.set")
 require("core.lazy")
+require("core.floating_terminal")
 
 -- clangd setup
 require('lspconfig').clangd.setup {

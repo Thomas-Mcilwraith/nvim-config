@@ -52,5 +52,5 @@ vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 vim.o.confirm = true
 
--- mouse
-vim.mouse = 'a'
+-- -- mouse
+-- vim.mouse = 'a'
