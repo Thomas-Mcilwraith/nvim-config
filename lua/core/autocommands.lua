@@ -91,3 +91,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     end,
 })
+
+-- hide lineno in terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    local win = vim.api.nvim_get_current_win()
+    vim.wo[win].number = false
+    vim.wo[win].relativenumber = false
+    vim.wo[win].signcolumn = "no"
+  end,
+})
