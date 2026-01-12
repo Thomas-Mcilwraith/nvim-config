@@ -32,7 +32,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.schedule(function()
-    vim.o.clipboard = 'unnamedplus'
+    vim.opt.clipboard = "unnamedplus"
 end)
 
 -- set warning/error text to show
@@ -45,3 +45,9 @@ vim.diagnostic.config({
   underline = true,
   update_in_insert = false,
 })
+
+require('osc52').setup{
+    max_length = 0,
+    silent = true,
+}
+

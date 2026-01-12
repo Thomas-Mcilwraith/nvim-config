@@ -1,0 +1,2 @@
+# git pushing
+git -c credential.helper="store --file=.git-credentials" push origin <BRANCHNAME>

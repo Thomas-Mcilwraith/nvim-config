@@ -1,4 +1,4 @@
--- Attach flake8 diagnostics to Python files
+-- Attach linters (flake8, etc) to relevant files
 return {
   "nvimtools/none-ls.nvim",
   dependencies = {
@@ -12,9 +12,11 @@ return {
     null_ls.setup({
       sources = {
         flake8.with({
-          command = vim.fn.stdpath("data") .. "/mason/bin/flake8",
+          command = vim.fn.expand("$HOME/.local/bin/flake8"),
         }),
       },
     })
+
+    vim.lsp.enable("null-ls")
   end,
 }

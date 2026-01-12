@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+
 -- lsp keybinds, highlight mentions on hover
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),

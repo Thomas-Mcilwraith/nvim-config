@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 
+-- netrw toggle
 vim.keymap.set("n", "<leader>e", function()
     if vim.bo.filetype == "netrw" then
         vim.cmd("bd")      -- close netrw buffer
@@ -8,9 +9,11 @@ vim.keymap.set("n", "<leader>e", function()
     end
 end, { desc = "Toggle netrw" })
 
+-- move paragraphs up/down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+-- keep buffer centered on scroll
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -19,6 +22,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- better terminal exit
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
 -- manage tabs
 local function toggle_terminal_tab()
     local current_tab = vim.fn.tabpagenr()
@@ -39,8 +43,7 @@ local function toggle_terminal_tab()
         vim.cmd('only')
     end
 end
-
-
+-- create second tab on vim enter, go back to first tab
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     toggle_terminal_tab()
@@ -48,13 +51,14 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
+-- toggle between terminal tab and code tab
 vim.keymap.set('n', '<leader>t', toggle_terminal_tab, {
     noremap = true,
     silent = true,
     desc = "Toggle terminal tab",
 })
 
--- manage windows
+-- open window to the right
 vim.keymap.set('n', '<leader>w', function()
     local current_tab = vim.fn.tabpagenr()
 
@@ -68,6 +72,7 @@ vim.keymap.set('n', '<leader>w', function()
     end
 end, {silent = true})
 
+-- close window
 vim.keymap.set("n", "<leader>W", function()
     if #vim.api.nvim_list_wins() > 1 then
         vim.cmd("close")
@@ -88,10 +93,21 @@ function confirm_quit_nvim()
     vim.cmd("qa!")
   end
 end
--- quit
 vim.keymap.set("n", "<leader>q", confirm_quit_nvim, {
   noremap = true,
   silent = true,
   desc = "Confirm quit Neovim",
 })
+
+-- copy to tabby clipboard
+vim.keymap.set('v', '<leader>c', function()
+    require('osc52').copy_visual()
+end, {desc = "[C]opy to host}"})
+
+-- Leader+v to paste from terminal (tabby clipboard)
+vim.keymap.set('n', '<leader>v', function()
+    vim.opt.paste = true
+    print("Press Shift+Insert (or Ctrl+Shift+V) to paste from host clipboard")
+    vim.cmd([[autocmd CursorMoved,InsertEnter * set nopaste | augroup END]])
+end, {desc = "[V]aste from host"})
 
