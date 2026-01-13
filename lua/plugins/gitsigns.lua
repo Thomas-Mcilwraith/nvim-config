@@ -7,6 +7,7 @@ return {
         { "<leader>gA", "<cmd>Gitsigns stage_buffer<CR>", desc = "[A]dd buffer" },
         { "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", desc = "[Reset] buffer" },
         { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<CR>", desc = "Toggle [B]lame" },
+        { "<leader>gi", "<cmd>Gitsigns preview_hunk_inline<CR>", desc = "[I]nspect hunk" },
     },
     config = function ()
         require('gitsigns').setup {
