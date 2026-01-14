@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 })
 
 -- toggle between terminal tab and code tab
-vim.keymap.set('n', '<leader>t', toggle_terminal_tab, {
+vim.keymap.set('n', '<Tab>', toggle_terminal_tab, {
     noremap = true,
     silent = true,
     desc = "Toggle terminal tab",

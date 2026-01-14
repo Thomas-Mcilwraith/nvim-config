@@ -46,6 +46,8 @@ return{ -- Useful plugin to show you pending keybinds.
         { '<leader>s', group = '[S]earch' },
         { '<leader>g', group = '[G]it' },
         { '<leader>d', group = '[D]iff' },
+        { '<leader>l', group = '[L]SP Actions' },
+        { '<leader>i', group = '[I]nspect' },
       },
     },
   }
