@@ -100,7 +100,7 @@ vim.keymap.set("n", "<leader>q", confirm_quit_nvim, {
 })
 
 -- copy to tabby clipboard
-vim.keymap.set('v', '<leader>c', function()
+vim.keymap.set('v', '<leader>y', function()
     require('osc52').copy_visual()
 end, {desc = "[C]opy to host}"})
 

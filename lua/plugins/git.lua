@@ -23,8 +23,8 @@ return {
             { "<leader>gA", "<cmd>Gitsigns stage_buffer<CR>", desc = "[A]dd buffer" },
             { "<leader>gR", "<cmd>Gitsigns reset_buffer<CR>", desc = "[Reset] buffer" },
             { "<leader>gi", "<cmd>Gitsigns preview_hunk_inline<CR>", desc = "[I]nspect hunk" },
-            { "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<CR>", desc = "inline [B]lame" },
-            { "<leader>gB", "<cmd>Gitsigns toggle_current_line_blame<CR>", desc = "buffer [B]lame" },
+            { "<leader>gb", "<cmd>Gitsigns blame_line<CR>", desc = "[b]lame line" },
+            { "<leader>gB", "<cmd>Gitsigns blame<CR>", desc = "[B]lame buffer" },
         },
         config = function ()
             require('gitsigns').setup {
@@ -51,7 +51,7 @@ return {
                 watch_gitdir = { follow_files = true },
                 auto_attach = true,          -- attach automatically to git buffers
                 attach_to_untracked = true,  -- <--- show signs on untracked files too
-                current_line_blame = true,
+                current_line_blame = false,
                 sign_priority = 6,
                 update_debounce = 100,
                 max_file_length = 40000,

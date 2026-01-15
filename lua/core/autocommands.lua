@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         map('<leader>la', vim.lsp.buf.code_action, 'Code [A]ctions', { 'n', 'x' })
 
         -- Find references for the word under your cursor.
-        map('<leader>lr', require('telescope.builtin').lsp_references, '[R]eferences')
+        map('<leader>sc', require('telescope.builtin').lsp_references, '[C]urrent word (LSP)')
 
         -- Jump to the implementation of the word under your cursor.
         map('<leader>li', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
-        map('<leader>lW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
+        map('<leader>sw', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace symbols')
 
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see

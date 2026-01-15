@@ -12,8 +12,9 @@ return {
         vim.keymap.set('n', '<leader>sf', builtin.find_files, {desc = "[F]iles"})
         vim.keymap.set('n', '<leader>sr', builtin.git_files, {desc = "[R]epository"})
         vim.keymap.set('n', '<leader>sg', builtin.live_grep, {desc = "[G]rep"})
+        vim.keymap.set('n', '<leader>sd', builtin.diagnostics, {desc = "[D]iagnostics"})
         vim.keymap.set('n', '<leader>sb', builtin.current_buffer_fuzzy_find, {desc = "[B]uffer"})
-        vim.keymap.set('n', '<leader>sc', builtin.grep_string, {desc = "[C]urrent word"})
+        vim.keymap.set('n', '<leader>sC', builtin.grep_string, {desc = "[C]urrent word (all)"})
 
         -- setup telescope
         require('telescope').setup({
