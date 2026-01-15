@@ -38,6 +38,8 @@ return{
                 settings = {
                     python = {
                         analysis = {
+                            typeCheckingMode = "basic",
+                            reportOptionalCall = "none",
                             autoSearchPaths = true,
                             useLibraryCodeForTypes = true,
                             diagnosticMode = "workspace",
