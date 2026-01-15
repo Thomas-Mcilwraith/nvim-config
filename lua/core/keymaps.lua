@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 -- netrw toggle
 vim.keymap.set("n", "<leader>e", function()
     if vim.bo.filetype == "netrw" then
-        vim.cmd("bd")      -- close netrw buffer
+        vim.cmd("bp")      -- go back
     else
         vim.cmd("Ex")      -- open netrw
     end

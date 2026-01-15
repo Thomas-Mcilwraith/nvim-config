@@ -25,4 +25,4 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.api.nvim_set_hl(0, "@punctuation.delimiter", { bold = true })
 vim.api.nvim_set_hl(0, "@punctuation.bracket", { bold = true })
 vim.api.nvim_set_hl(0, "@punctuation.special", { bold = true })
-
+vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpActiveParameter', { link = 'CursorLine' })
