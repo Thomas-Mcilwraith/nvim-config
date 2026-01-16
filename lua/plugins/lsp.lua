@@ -52,7 +52,7 @@ return{
 
             -- fortran
             vim.lsp.config("fortls", {
-                cmd = { vim.fn.expand("$HOME/.local/bin/fortls") },
+                cmd = { vim.fn.expand("~/.local/bin/fortls") },
 
                 filetypes = { "fortran" },
 
@@ -80,6 +80,15 @@ return{
                         enable_code_actions = true,
                     },
                 },
+            })
+
+            -- C/C++
+            vim.lsp.config("clangd", {
+                cmd = { vim.fn.expand("~/.local/bin/clangd") },
+                filetypes = { "c", "cpp", "objc", "objcpp" },
+                root_markers = { "compile_commands.json", "compile_flags.txt", ".git" },
+                capabilities = capabilities,
+                single_file_support = true,
             })
 
             -- -- CMP setup
@@ -116,6 +125,7 @@ return{
             vim.lsp.config('null-ls', {capabilities = capabilities})
             vim.lsp.enable('lua_ls')
             vim.lsp.enable('pyright')
+            vim.lsp.enable('clangd')
             vim.lsp.enable('fortls')
             vim.lsp.enable('null-ls')
         end,
